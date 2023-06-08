@@ -16,6 +16,7 @@ pipeline {
             steps{
                 script {
                     sh 'kubectl apply -f kubernetes/ingress-controller.yml'
+                    sh 'kubectl apply -f kubernetes/ingress.yml --dry-run=client'
                     sh 'kubectl apply -f kubernetes/ingress.yml'
                 }
             }
