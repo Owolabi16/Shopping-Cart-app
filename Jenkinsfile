@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     sh 'kubectl create -f monitoring-setup/'
-                    sh 'kubectl create -f monitoring-manifests/'
+                    sh 'kubectl create -f monitoring-manifest/'
                 }
             }
         }
