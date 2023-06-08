@@ -24,8 +24,8 @@ pipeline {
         stage('setup Prometues and Grafana') {
             steps {
                 script {
-                    sh 'kubectl create -f kubernetes/setup/'
-                    sh 'kubectl create -f kubernetes/manifests/'
+                    sh 'kubectl create -f monitoring setup/'
+                    sh 'kubectl create -f monitoring manifests/'
                 }
             }
         }
