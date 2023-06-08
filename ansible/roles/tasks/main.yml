@@ -1,0 +1,28 @@
+---
+    - name: Install Apache web server
+      apt:
+        name: "{{ webservname }}"
+        state: "{{ webservstate }}"
+
+    - name: Start the Apache Service
+      service:
+        name: "{{ webservname }}"
+        state: "{{ webservsvc }}"
+
+    - name: Install Unzip and tar packages
+      apt:
+        name:
+         - unzip
+         - tar
+        state: present
+      become: true
+
+    - name: Download Application
+      unarchive:
+        src: "{{ webcode }}"
+        dest: "{{ webfolder }}"
+        remote_src: yes
+
+    - name: Copy Web Content
+      shell: cd "{{ webfolder }}"/musical-concert-page-main/ &&
+             cp -r * /var/www/html

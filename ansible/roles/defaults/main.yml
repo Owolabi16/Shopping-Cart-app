@@ -1,0 +1,5 @@
+webservname: apache2
+webservstate: present
+webservsvc: started
+webcode: https://github.com/Elerqsousy/musical-concert-page/archive/refs/heads/main.zip
+webfolder: /home/ubuntu

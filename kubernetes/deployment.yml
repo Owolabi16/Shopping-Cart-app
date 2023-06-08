@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ali-shopping-cart-app
+spec:
+  selector:
+    matchLabels:
+      app: web
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: node-con
+          image: owolabialiu/node:latest
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: Always

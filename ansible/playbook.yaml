@@ -1,0 +1,7 @@
+---
+- name: Deploy Musical Concert Page
+  hosts: servers
+  become: true
+  gather_facts: false
+  roles:
+     - Ali-Musical-Concert-Page

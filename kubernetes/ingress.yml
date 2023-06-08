@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata: 
+  name: ali-shopping-cart-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: owolabialiu.com.ng
+      http: 
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: ali-shopping-cart-svc
+                port:
+                  number: 3000
